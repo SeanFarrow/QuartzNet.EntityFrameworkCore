@@ -102,9 +102,8 @@ public class CronTriggerTests
     public void ACronTriggerInstanceShouldBeEnstantiatedWhenAllParametersAreValid(string timezoneId)
     {
         _timezoneId =timezoneId;
-        CronTrigger result =null!;
-        
-        var act = () => result = CreateSut();
+
+        var result = CreateSut();
 
         result.Should().NotBeNull();
     }
