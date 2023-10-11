@@ -27,7 +27,7 @@ public class CronTrigger
     /// <summary>
     /// The id of the timezone in which this <see cref="CronTrigger"/> should be fired.
     /// </summary>
-    public string? TimezoneID { get; }
+    public string? TimezoneId { get; }
 
     /// <summary>
     /// Instantiates a <see cref="CronTrigger"/>.
@@ -37,9 +37,9 @@ public class CronTrigger
     /// <param name="triggerGroup">the group to which this <see cref="CronTrigger"/> belongs.</param>
     /// <param name="cronExpression">The expression that determines when this <see cref="CronTrigger"/> will be fired.</param>
     /// <param name="timezoneId"> the id of the timezone in which the <paramref name="cronExpression"/> will be interpreted.</param>
-    /// <exception cref="ArgumentNullException">Thrown when the <paramref ="schedulerName"/>, <paramref ="triggerName"/>, <paramref ="triggerGroup"/> or <paramref ="cronExpression"/> are <c>null</c>.</exception>
-    /// <exception cref="ArgumentException">Thrown when the <paramref ="schedulerName"/>, <paramref ="triggerName"/>, <paramref ="triggerGroup"/> or <paramref ="cronExpression"/> are empty strings.</exception>
-    public CronTrigger(string schedulerName, string triggerName, string triggerGroup, string cronExpression, string timezoneId)
+    /// <exception cref="ArgumentNullException">Thrown when the <paramref name="schedulerName"/>, <paramref name="triggerName"/>, <paramref name="triggerGroup"/> or <paramref name="cronExpression"/> are <c>null</c>.</exception>
+    /// <exception cref="ArgumentException">Thrown when the <paramref name="schedulerName"/>, <paramref name="triggerName"/>, <paramref name="triggerGroup"/> or <paramref name="cronExpression"/>are empty strings.</exception>
+    public CronTrigger(string schedulerName, string triggerName, string triggerGroup, string cronExpression, string? timezoneId =null)
     {
         if (schedulerName is null)
         {
@@ -83,9 +83,8 @@ public class CronTrigger
         {
             throw new ArgumentException("The cronExpression parameter cannot be an empty string.", nameof(cronExpression));
         }
-
         CronExpression = cronExpression;
 
-        TimezoneID = timezoneId;
+        TimezoneId = timezoneId;
     }
 }
