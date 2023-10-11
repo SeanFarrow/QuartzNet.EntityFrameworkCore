@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using QuartzNet.EntityFrameworkCore.Entities;
 
 namespace QuartzNet.EntityFrameworkCore.DbContexts
@@ -12,5 +13,11 @@ namespace QuartzNet.EntityFrameworkCore.DbContexts
         /// Gets or sets the <see cref="CronTrigger"/> instances. 
         /// </summary>
         public DbSet<CronTrigger> CronTriggers => Set<CronTrigger>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
 }
