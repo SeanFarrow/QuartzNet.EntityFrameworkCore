@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using QuartzNet.EntityFrameworkCore.Entities;
 
 namespace QuartzNet.EntityFrameworkCore.DbContexts
@@ -14,6 +15,11 @@ namespace QuartzNet.EntityFrameworkCore.DbContexts
         /// </summary>
         public DbSet<CronTrigger> CronTriggers => Set<CronTrigger>();
 
+        /// <summary>
+        /// Gets or sets the <see cref="PausedTriggerGroup"/> instances.
+        /// </summary>
+        public DbSet<PausedTriggerGroup> PausedTriggerGroups => Set<PausedTriggerGroup>();
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
