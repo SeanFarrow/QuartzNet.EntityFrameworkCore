@@ -1,12 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using FluentAssertions;
-using FluentAssertions.Execution;
+﻿using FluentAssertions;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace QuartzNet.EntityFrameworkCore.Tests.Unit.Entities.Configurations;
+namespace QuartzNet.EntityFrameworkCore.Tests.Unit.Entities.Configuration;
 
 public abstract class EntityTypeConfigurationTestsBase<T, U> where T : class, new()
 where U: class

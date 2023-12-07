@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace QuartzNet.EntityFrameworkCore.Entities.Configurations;
+namespace QuartzNet.EntityFrameworkCore.Entities.Configuration;
 
 public class SchedulerStateEntityConfiguration : IEntityTypeConfiguration<SchedulerState>
 {

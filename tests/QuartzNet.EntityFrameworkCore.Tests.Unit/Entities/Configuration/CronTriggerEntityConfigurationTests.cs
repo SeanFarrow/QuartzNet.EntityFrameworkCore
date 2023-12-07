@@ -2,9 +2,9 @@
 using FluentAssertions.Execution;
 using Microsoft.EntityFrameworkCore;
 using QuartzNet.EntityFrameworkCore.Entities;
-using QuartzNet.EntityFrameworkCore.Entities.Configurations;
+using QuartzNet.EntityFrameworkCore.Entities.Configuration;
 
-namespace QuartzNet.EntityFrameworkCore.Tests.Unit.Entities.Configurations;
+namespace QuartzNet.EntityFrameworkCore.Tests.Unit.Entities.Configuration;
 
 public class CronTriggerEntityConfigurationTests : EntityTypeConfigurationTestsBase<CronTriggerEntityConfiguration, CronTrigger>
 {
