@@ -10,7 +10,7 @@ public class CronTriggerTests
     private string _triggerName ="test trigger";
     private string _triggerGroup ="test group";
     private string _cronExpression ="test expression";
-    private string _timezoneId ="test id";
+    private string? _timezoneId ="test id";
     
     private CronTrigger CreateSut() => new(_schedulerName, _triggerName, _triggerGroup, _cronExpression, _timezoneId);
     #endregion
@@ -99,7 +99,7 @@ public class CronTriggerTests
     [Theory]
     [InlineData(null)]
     [InlineData("")]
-    public void ACronTriggerInstanceShouldBeEnstantiatedWhenAllParametersAreValid(string timezoneId)
+    public void ACronTriggerInstanceShouldBeEnstantiatedWhenAllParametersAreValid(string? timezoneId)
     {
         _timezoneId =timezoneId;
 
